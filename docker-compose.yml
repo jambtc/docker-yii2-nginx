@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+    yii2:
+        build:
+          context: . #current dir as build context
+
+        volumes:
+            - ~/.composer-docker/cache:/root/.composer/cache:delegated
+            - ./:/app:delegated
+        ports:
+          - '8005:80'
+        network_mode: "host"
